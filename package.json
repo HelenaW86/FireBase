@@ -2,6 +2,7 @@
   "name": "technigo-react-starter",
   "version": "1.0.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.1",
@@ -10,6 +11,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "firebase": "^10.5.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "^3.3.0",
