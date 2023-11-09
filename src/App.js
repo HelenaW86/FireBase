@@ -5,10 +5,10 @@ import {
   deleteDoc,
   collection,
   doc,
-  updateDoc,
+  updateDoc
 } from 'firebase/firestore/lite';
 import { db, auth, storage } from 'config/firebase';
-import { ref, uploadBytes, getStorage } from 'firebase/storage';
+import { ref, uploadBytes } from 'firebase/storage';
 import { Auth } from './components/auth';
 
 export const App = () => {
@@ -19,15 +19,15 @@ export const App = () => {
   const [fileUpload, setFileUpload] = useState();
 
   const personsCollectionRef = collection(db, 'person');
-  const storedStorage = getStorage();
-  const pathReference = ref(storedStorage, 'projectFiles/2.png');
+  // const storedStorage = getStorage();
+  // const pathReference = ref(storedStorage, 'projectFiles/2.png');
 
   const getPerson = async () => {
     try {
       const data = await getDocs(personsCollectionRef);
       const filteredData = data.docs.map((d) => ({
         ...d.data(),
-        id: d.id,
+        id: d.id
       }));
       setPersonList(filteredData);
     } catch (err) {
@@ -40,7 +40,7 @@ export const App = () => {
       await addDoc(personsCollectionRef, {
         name: newPersonName,
         age: newPersonAge,
-        userId: auth?.currentUser?.uid,
+        userId: auth?.currentUser?.uid
       });
       getPerson();
     } catch (err) {
